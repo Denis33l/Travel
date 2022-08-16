@@ -40,6 +40,9 @@ html {
     outline: none;
   }
 
+body._lock {
+  overflow: hidden;
+}
 
 .container {
   max-width: 1200px;
@@ -98,11 +101,22 @@ html {
     gap: 42px;
 }
 
+.nav__item-hidden {
+  display: none;
+}
+
 .nav__item-link {
-    font-family: 'Red Hat Text', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 1);
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav__item-linkLogin{
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
 }
 
 .button-login {
@@ -120,6 +134,7 @@ html {
 /* BURGER MENU */
 .menu__icon {
   display: none;
+  cursor: pointer;
 }
 
 .header__menu {
@@ -127,8 +142,8 @@ html {
   box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
   border-radius: 10px;
 
-width: 165px;
-height: 250px;
+  width: 165px;
+  height: 250px;
 }
 
 
@@ -243,11 +258,14 @@ height: 250px;
 .slider__button {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
   margin-bottom: 80px;
 }
 
 .arrow-mini {
+  display: none;
+}
+
+.swiper .swiper-button-prev, .swiper-button-next{
   display: none;
 }
 
@@ -368,6 +386,10 @@ height: 250px;
   padding: 30px 10px;
 
   transition: all 0.8s ease 0s;
+
+  overflow: hidden;
+
+  z-index: 6;
 }
 
 
@@ -401,6 +423,8 @@ height: 250px;
   padding: 15px 0px;
   gap: 15.5px;
   margin: 30px 0 20px 0;
+  align-items: center;
+
 }
 
 .popup-login__links-google {
@@ -412,6 +436,8 @@ height: 250px;
   padding: 15px 0px;
   gap: 15.5px;
   margin: 30px 0 20px 0;
+  align-items: center;
+
 }
 
 .popup-login__signin-facebook {
@@ -443,7 +469,7 @@ color: #FFFFFF;
   top: 50%;
   left: 53%;
   background-color: rgba(13, 96, 111, 0.5);
-  width: 261px;
+  width: 47%;
   height: 2px;
 }
 
@@ -453,7 +479,7 @@ color: #FFFFFF;
   top: 50%;
   right: 53%;
   background-color: rgba(13, 96, 111, 0.5);
-  width: 261px;
+  width: 47%;
   height: 2px;
 }
 
@@ -571,4 +597,56 @@ input {
   text-decoration-line: underline;
   color: rgba(13, 96, 111, 1);
   text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16); 
+}
+
+
+.destination__title {
+  padding-bottom: 46px;
+}
+
+.destination__slide {
+  position: relative;
+  padding-bottom: 84px;
+}
+
+.destination__slide img{
+  border-radius: 16px;
+
+}
+
+.destination__text {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+
+  color: #FFFFFF;
+}
+
+.swiper .swiper-pagination {
+  bottom: 40px;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+
+  background: #F2785C;
+}
+
+.swiper-button-prev{
+  color: #F2785C;
+  width: 24.94px;
+  height: 14.36px;
+}
+
+.swiper-button-next{
+  color: #F2785C;
+  width: 24.94px;
+  height: 14.36px;
 }

@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/media.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
   <title>Travel</title>
 </head>
 
@@ -15,25 +16,30 @@
   <header class="header">
     <div class="container container-header">
       <div class="header__logo">
-        <a href="#" class="logo"><img src="/img/header/Logo.png" alt="logo"></a>
-        <a href="#" class="mini-logo"><img src="/img/header/mini-logo.png" alt="mini-logo"></a>
+        <a href="#" class="logo" onclick="history.go(0)"><img src="/img/header/Logo.png" alt="logo"></a>
+        <a href="#" class="mini-logo" onclick="history.go(0)"><img src="/img/header/mini-logo.png" alt="mini-logo"></a>
       </div>
 
-      <div class="header__menu menu">
+
+      <nav class="nav">
+
         <div class="menu__icon">
           <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a href="#How_It_Works" class="nav__item-link">How It Works</a></li>
-            <li class="nav__item"><a href="#Paln_Your_Trip" class="nav__item-link">Paln Your Trip</a></li>
-            <li class="nav__item"><a href="#Destinations" class="nav__item-link">Destinations</a></li>
-            <li class="nav__item"><a href="#Travel_Stories" class="nav__item-link">Travel Stories</a></li>
-          </ul>
-        </nav>
-        <div class="header__button">
-          <button class="button-login">Login</button>
-        </div>
+
+        <ul class="nav__list nav__list-hidden">
+          <li class="nav__item"><a href="#How_It_Works" class="nav__item-link">How It Works</a></li>
+          <li class="nav__item"><a href="#Paln_Your_Trip" class="nav__item-link">Paln Your Trip</a></li>
+          <li class="nav__item"><a href="#Destinations" class="nav__item-link">Destinations</a></li>
+          <li class="nav__item"><a href="#Travel_Stories" class="nav__item-link">Travel Stories</a></li>
+          <li class="nav__item nav__item-hidden"><a href="#" class="nav__item-link nav__item-linkLogin">Account</a></li>
+          <li class="nav__item nav__item-hidden"><a href="#footer" class="nav__item-link">Social media</a></li>
+        </ul>
+      </nav>
+      <div class="header__button">
+        <button class="button-login">Login</button>
       </div>
     </div>
 
@@ -73,33 +79,49 @@
       </div>
     </section>
 
-    <section class="slider" id="Destinations">
+    <section class="destination" id="Destinations">
       <div class="container">
-        <h2 class="slider__title title">POPULAR DESTINATIONS</h2>
-        <div class="slider__inner">
-          <div class="slider__inner-item">
-            <img src="img/Slider/Rectangle24.png" class="slider__inner-image" alt="Japan">
-            <img src="img/Slider-mini/Rectangle 26.png" class="slider__inner-image-mini" alt="Japan">
-            <!-- <p class="slider__inner-text">JAPAN</p> -->
+        <h2 class="destination__title title">POPULAR DESTINATIONS</h2>
+
+        <div class="destination__slider swiper">
+          <div class="destination__wrapper swiper-wrapper">
+
+            <div class="destination__slide swiper-slide">
+              <img src="img/Slider/Spain.png" class="destination__image" alt="Spain">
+              <!-- <img src="img/Slider/Spain-mini.png" class="destination__image-mini" alt="Spain"> -->
+              <p class="destination__text">Spain</p>
+            </div>
+
+            <div class="destination__slide swiper-slide">
+              <img src="img/Slider/Japan.png" class="destination__image" alt="Japan">
+              <!-- <img src="img/Slider/Japan-mini.png" class="destination__image-mini" alt="Japan"> -->
+              <p class="destination__text">Japan</p>
+            </div>
+
+            <div class="destination__slide swiper-slide">
+              <img src="img/Slider/USA.png" class="destination__image" alt="USA">
+              <!-- <img src="img/Slider/USA-mini.png" class="destination__image-mini" alt="USA"> -->
+              <p class="destination__text">USA</p>
+            </div>
+
           </div>
-          <!-- <div class="slider__inner-item">
-            <img src="img/Slider/Rectangle 34.png" class="slider__inner-image" alt="Japan">
-          </div>
-          <div class="slider__inner-item">
-            <img src="img/Slider/Rectangle 35.png" class="slider__inner-image" alt="Japan">
-          </div>
-        </div> -->
-          <div class="slider__swap">
-            <img src="/img/Slider/Frame6.png" alt="sroll" class="swap">
-          </div>
-          <div class="slider__button">
-            <button class="button">
-              <img src="img/Slider-mini/Vector.png" alt="arrow" class="arrow-mini">
-              <img src="img/Slider/Arrow-right.png" alt="arrow" class="gap">
-              Find More
-            </button>
-          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <div class="swiper-pagination"></div>
+
         </div>
+
+
+        <div class="slider__button">
+          <button class="button">
+            <img src="img/Slider-mini/Vector.png" alt="arrow" class="arrow-mini">
+            <img src="img/Slider/Arrow-right.png" alt="arrow" class="gap">
+            Find More
+          </button>
+        </div>
+      </div>
     </section>
 
     <section class="stories" id="Travel_Stories">
@@ -191,7 +213,7 @@
 
 
           <div class="container">
-            <div class="stories__footer">
+            <div class="stories__footer" id="footer">
               <p class="inner-text">All Rights Reserved © Travel Portal</p>
               <div class="stories__footer-social">
                 <img src="img/icon/akar-icons_instagram-fill.png" alt="Instagram">
@@ -270,6 +292,7 @@
 
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 

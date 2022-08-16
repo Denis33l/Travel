@@ -2,23 +2,27 @@
     .hero__title, 
     .hero__text,
     .logo,
-    .nav,
     .header__button,
     .slider__inner-image,
     .slider__swap,
     .gap,
     .stories__photo,
     .inner-text
+    /* .destination__image */
      {
         display: none;
     }
     .mini-logo,
     .slider__inner-image-mini,
     .arrow-mini,
-    .stories__photo-mini
+    .stories__photo-mini,
+    .nav__item-hidden
+    /* .destination__image-mini */
      {
         display: block;
     }
+
+    
 
     .header {
         background: 0;
@@ -109,6 +113,27 @@
         margin-bottom: 20px;
     }
 
+    .destination__text {
+      top: 6%;
+      text-transform: uppercase;
+      left: 8%;
+
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      top: 45%;
+  }
+
+  .swiper .swiper-button-next{
+    display: block;
+  }
+
+  .swiper .swiper-button-prev {
+    display: block;
+  }
+
     .button {
         display: flex;
         padding: 7.5px 12px;
@@ -116,7 +141,11 @@
         gap: 6.62px;
     }
 
-    
+    .destination__image-mini {
+      border-radius: 16px;
+    }
+
+
     /* STORIES */
     .container-stories-mini {
         background: url(../img/Stories-mini/Rectangle28.png) no-repeat;
@@ -172,40 +201,206 @@
 
     /* BURGER MENU */
     .menu__icon {
+        z-index: 2;
         display: block;
         position: relative;
         width: 30px;
         height: 18px;
+        top: 48px;
+        right: 9px;
     }
 
-    .menu__icon::after,
-    .menu__icon::before,
+    .nav__list {
+        padding: 44px 15px 30px 45px;
+        gap: 10px;
+    }
+
     .menu__icon span {
         position: absolute;
+        top: calc(50% - 1px);
         left: 0;
-        height: 10%;
         width: 100%;
-        transition: all 0.3s ease 0s;
-        background-color: aliceblue;
-        cursor: pointer;
-    }
-
-    .menu__icon::after,
-    .menu__icon::before {
-        content: "";
-    }
-
-    .menu__icon::after {
-        bottom: 0;
-    }
-
-    .menu__icon::before {
+        height: 2px;
+        background-color: #fff;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        border-radius: 5px;
+      }
+      .menu__icon span:first-child {
         top: 0;
+      }
+      .menu__icon span:last-child {
+        top: auto;
+        bottom: 0;
+      }
+
+      .menu__icon.active span {
+        transform: scale(0);
+      }
+
+      .menu__icon.active span:first-child {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+    }
+      
+    .menu__icon.active span:last-child {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
     }
 
-    .menu__icon span {
-        top: 50%;
-        transform: scale(1) translate(0px, -50%);
+    .active {
+        right: 128px;
+        top: 15px;
     }
+
+    .nav {
+        position: absolute;
+        top: 5px;
+         right: 4px;
+    }
+
+    .nav__list {
+        background-color: rgba(242, 120, 92, 1);
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
+        border-radius: 10px;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        width: 165px;
+        height: 250px;
+    }
+
+    
+
+    .nav__list-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .popup__content {
+        min-width: unset;
+    }
+
+    
+    .popup__title {
+    font-size: 17px;
+    margin-top: 15px;
+    line-height: 13.2px; 
+    }
+
+    .popup-login__line-text::after {
+        right: 56%;
+        width: 43%;
+    }
+
+    .popup-login__line-text::before {
+        left: 56%;
+        width: 43%;
+    }
+
+
+
+
+
+
+    .popup__content {
+        padding: 0 25px;
+      }
+  
+      .popup-login__links-facebook {
+        padding: 8px 6px;
+        gap: 10px;
+        margin: 15px 0 10px 0;
+      }
+      
+      .popup-login__links-google {
+        padding: 8px 6px;
+        gap: 10px;
+        margin: 15px 0 10px 0;
+      }
+      
+      .popup-login__signin-facebook {
+        font-size: 15px;
+      }
+      
+      .popup-login__signin-google {
+        font-size: 15px;
+      }
+      
+      .popup-login__line-text {
+        font-size: 15px;
+      }
+      
+      .input__text {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      
+      input {
+        padding: 10px;
+        font-size: 10px;
+      }
+      
+      .popup-login__button{
+        padding: 7px 0px;
+        margin: 15px 0 5px 0;
+      }
+      
+      .popup-login__text {
+        font-size: 10px;
+      }
+      
+      .popup-login__links-password {
+        font-size: 10px;
+      }
+      
+      .popup-login__links-register {
+        font-size: 10px;
+      }
+      
+      
+      .popup-login-register {
+        font-size: 10px;
+        margin: 27px 0 13px 0;      
+      }
+      
+      .popup-login-register::after {
+        top: -120%;
+        left: 0;
+        width: 100%;
+      }
+
+      .popup-create {
+        padding: 15px 5px;
+      }
+      
+      .popup-login__links-login {
+        font-size: 10px;
+      }
+
+}
+
+
+
+@media (max-width: 400px) {
+  .stories__inner-item {
+    flex-direction: column;
+  }
+
+  .stories__inner-text{
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .stories__inner-title{
+    font-size: 22px;
+    margin-top: 15px;
+  }
 
 }
